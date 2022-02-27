@@ -1,16 +1,17 @@
-var quora_gone = false;
-if (window.location.href.includes("google.com/search?")
-    && !quora_gone) {
+if (window.location.href.includes("google.com/search?")) {
 
     let u = window.location.href;
+    let u_changed = false;
     const arr = u.split("&");
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i].includes("google.com/search?")) {
+        if (arr[i].includes("google.com/search?")
+            && !arr[i].includes("+-quora.com")) {
             arr[i] = arr[i].concat("+-quora.com");
+            u_changed = true;
         }
     }
-    let result = arr.join("&");
-
-    quora_gone = true;
-    window.location.replace(result);
+    if (u_changed) {
+        let result = arr.join("&");
+        window.location.replace(result);
+    }
 }
