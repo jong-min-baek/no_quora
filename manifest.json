@@ -1,0 +1,18 @@
+{
+    "manifest_version": 2,
+    "version": "1.0",
+    "name": "Fuck Quora", 
+    "description": "Specifically omits Quora from all Google search requests.",
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ]
+}
