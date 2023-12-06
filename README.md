@@ -1,4 +1,4 @@
-# Fuck Quora 
+# No Quora 
 What it do?
  - It Specifically omits Quora from all Google search requests.
 
